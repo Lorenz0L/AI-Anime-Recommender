@@ -17,10 +17,10 @@ Full-stack anime recommender using RAG, Groq LLM, and live MyAnimeList data.
 ```bash
 cd backend
 python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
+source venv/bin/activate       
 pip install -r requirements.txt
-cp .env.example .env            # fill in your two API keys
-python -m pipeline.build_pipeline   # ~35 min for 3000 anime, set ANIME_FETCH_LIMIT=100 to test
+cp .env.example .env            
+python -m pipeline.build_pipeline  
 uvicorn app.main:app --reload --port 8000
 ```
 
