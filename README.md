@@ -1,4 +1,4 @@
-# AniMind — AI Anime Recommender
+# AI Anime Recommender
 
 Full-stack anime recommender using RAG, Groq LLM, and live MyAnimeList data.
 
