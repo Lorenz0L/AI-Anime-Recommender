@@ -1,6 +1,6 @@
 # AI Anime Recommender
 
-Full-stack anime recommender using RAG, Groq LLM, and live MyAnimeList data.
+Full-stack anime recommender using RAG, Groq LLM, and live MyAnimeList data
 
 ## Stack
 - **Backend:** FastAPI, ChromaDB, HuggingFace sentence-transformers, Groq
