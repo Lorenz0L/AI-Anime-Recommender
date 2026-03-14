@@ -37,4 +37,4 @@ Open http://localhost:5173
 1. **Groq** analyzes your query and detects mood/themes
 2. **ChromaDB** semantic search finds 10 candidate anime
 3. **Groq** re-ranks and writes personalized explanations
-4. **Jikan API** fetches live MAL scores and community stats
+4. **Jikan API** fetches live MAL scores and community stats.
