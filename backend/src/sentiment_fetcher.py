@@ -16,7 +16,10 @@ class SentimentFetcher:
 
     def get_sentiment(self, title: str) -> Dict:
         if self._cached(title):
-            return {**self._cache[title], "from_cache": True}
+            cached = self._cache.get(title, {})
+            # Backwards-compatible: older cached entries might miss newer fields
+            if "image_url" in cached:
+                return {**cached, "from_cache": True}
         try:
             result = self._fetch(title)
             self._cache[title] = result
@@ -71,6 +74,7 @@ class SentimentFetcher:
             "scored_by": scored_by,
             "popularity_rank": popularity,
             "mal_url": a.get("url", ""),
+            "image_url": (a.get("images", {}) or {}).get("jpg", {}).get("image_url", ""),
             "post_count": scored_by,
             "sample_comments": comments,
         }
@@ -85,6 +89,7 @@ class SentimentFetcher:
             "scored_by": 0,
             "popularity_rank": None,
             "mal_url": "",
+            "image_url": "",
             "post_count": 0,
             "sample_comments": [],
             "from_cache": False,

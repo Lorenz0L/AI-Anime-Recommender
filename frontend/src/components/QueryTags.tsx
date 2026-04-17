@@ -9,7 +9,7 @@ export const QueryTags = ({ analysis }: { analysis: QueryAnalysis }) => {
   if (!tags.length) return null
   return (
     <div className="tags-row">
-      <span className="tags-label">Groq detected →</span>
+      <span className="tags-label">We detected →</span>
       {tags.map(({ label, type }) => (
         <span key={`${type}-${label}`} className={`tag tag-${type}`}>{label}</span>
       ))}

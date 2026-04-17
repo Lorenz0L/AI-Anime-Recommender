@@ -9,6 +9,14 @@ export const AnimeCard = ({ rec, index }: { rec: Recommendation; index: number }
     <article className="card" style={{ animationDelay: `${index * 110}ms` }}>
       <div className="card-top">
         <span className="card-rank">#{index + 1}</span>
+        {rec.image_url && (
+          <img
+            className="card-cover"
+            src={rec.image_url}
+            alt={`${rec.title} cover`}
+            loading="lazy"
+          />
+        )}
         <div className="card-head">
           <h2 className="card-title">{rec.title}</h2>
           <div className="card-genres">
@@ -34,7 +42,7 @@ export const AnimeCard = ({ rec, index }: { rec: Recommendation; index: number }
         <SentimentBadge s={rec.sentiment} />
         {rec.sentiment?.mal_url && (
           <a href={rec.sentiment.mal_url} target="_blank" rel="noreferrer" className="mal-link">
-            View on MAL ↗
+            View details ↗
           </a>
         )}
         {rec.sentiment?.sample_comments?.length > 0 && (

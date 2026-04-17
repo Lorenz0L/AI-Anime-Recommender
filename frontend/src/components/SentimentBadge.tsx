@@ -1,7 +1,7 @@
 import { SentimentData } from '../api/client'
 
 export const SentimentBadge = ({ s }: { s: SentimentData }) => {
-  if (!s || s.label === 'unknown') return <span className="badge badge-unknown">No MAL data</span>
+  if (!s || s.label === 'unknown') return <span className="badge badge-unknown">No community data</span>
   const cfg = {
     positive: { symbol: '↑', text: 'Well received', cls: 'badge-pos' },
     mixed:    { symbol: '~', text: 'Mixed reviews', cls: 'badge-mix' },

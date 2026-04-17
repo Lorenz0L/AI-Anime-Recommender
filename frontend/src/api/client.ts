@@ -15,6 +15,7 @@ export interface SentimentData {
 
 export interface Recommendation {
   title: string
+  image_url?: string
   explanation: string
   best_for: string
   caveat: string

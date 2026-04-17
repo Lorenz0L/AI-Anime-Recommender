@@ -84,6 +84,7 @@ body { background: var(--bg); color: var(--text); font-family: var(--fb); line-h
 @keyframes cardIn { to { opacity: 1; transform: none; } }
 .card-top { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 12px; }
 .card-rank { font-family: var(--fh); font-size: 32px; font-weight: 800; color: var(--dim); line-height: 1; min-width: 30px; flex-shrink: 0; }
+.card-cover { width: 72px; height: 96px; border-radius: 10px; object-fit: cover; border: 1px solid var(--border); background: var(--surf2); flex-shrink: 0; }
 .card-title { font-family: var(--fh); font-size: 19px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 6px; }
 .card-genres { display: flex; flex-wrap: wrap; gap: 5px; }
 .gpill { font-size: 11px; padding: 2px 9px; border-radius: 100px; background: var(--surf2); color: var(--muted); border: 1px solid var(--border); }

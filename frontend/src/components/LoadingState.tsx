@@ -1,8 +1,8 @@
 const STEPS = [
-  { label: 'Groq is analyzing your query',    sub: 'Detecting mood, themes & audience' },
-  { label: 'Searching the anime database',     sub: 'Semantic vector search (ChromaDB)' },
-  { label: 'Groq is picking the best matches', sub: 'Re-ranking & writing explanations' },
-  { label: 'Fetching live community stats',    sub: 'MyAnimeList scores via Jikan API' },
+  { label: 'We’re analyzing your query',      sub: 'Detecting mood, themes & audience' },
+  { label: 'Searching for close matches',     sub: 'Finding titles that fit your vibe' },
+  { label: 'Picking the best recommendations',sub: 'Ranking and writing explanations' },
+  { label: 'Fetching community stats',        sub: 'Pulling ratings and discussion signals' },
 ]
 
 export const LoadingState = () => (

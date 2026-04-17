@@ -43,9 +43,21 @@ class RecommendationPipeline:
         )
 
         recommendations = llm_result.get("recommendations", [])
+        retrieved_by_title = {}
+        for a in retrieved:
+            t = (a.get("title") or "").strip().lower()
+            te = (a.get("title_english") or "").strip().lower()
+            if t:
+                retrieved_by_title[t] = a
+            if te and te not in retrieved_by_title:
+                retrieved_by_title[te] = a
+
         for rec in recommendations:
             title = rec.get("title", "")
             if title:
+                meta = retrieved_by_title.get(title.strip().lower())
+                if meta:
+                    rec["image_url"] = meta.get("image_url", "")
                 sentiment = self.sentiment_fetcher.get_sentiment(title)
                 rec["sentiment"] = {
                     "score": sentiment.get("sentiment_score"),
@@ -57,6 +69,8 @@ class RecommendationPipeline:
                     "sample_comments": sentiment.get("sample_comments", []),
                     "mal_url": sentiment.get("mal_url", ""),
                 }
+                if not rec.get("image_url"):
+                    rec["image_url"] = sentiment.get("image_url", "")
 
         return {
             "query": user_query,

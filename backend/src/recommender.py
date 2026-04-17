@@ -16,7 +16,7 @@ class AnimeRecommender:
 
     def recommend(self, user_query: str, analyzed_query: Dict, retrieved_anime: List[Dict]) -> Dict:
         prompt = build_recommendation_prompt(user_query, analyzed_query, retrieved_anime)
-        logger.info("Sending to Groq...")
+        logger.info("Generating recommendations...")
 
         try:
             response = self.client.chat.completions.create(
@@ -26,7 +26,7 @@ class AnimeRecommender:
                 max_tokens=1500,
             )
         except Exception as e:
-            raise RecommendationError(f"Groq API error: {e}")
+            raise RecommendationError(f"Recommendation service error: {e}")
 
         content = response.choices[0].message.content.strip()
 

@@ -22,9 +22,9 @@ export default function App() {
           </div>
         </div>
         <div className="pills">
-          <span className="pill">Groq / Llama 3</span>
-          <span className="pill">ChromaDB RAG</span>
-          <span className="pill">Live MAL Data</span>
+          <span className="pill">Personalized picks</span>
+          <span className="pill">Mood-aware</span>
+          <span className="pill">Community stats</span>
         </div>
       </header>
 
@@ -75,7 +75,7 @@ export default function App() {
       </main>
 
       <footer className="foot">
-        Powered by Groq · HuggingFace · ChromaDB · MyAnimeList (Jikan)
+        Built by us · Anime data updates live
       </footer>
     </div>
   )
