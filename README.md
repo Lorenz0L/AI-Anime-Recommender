@@ -19,7 +19,7 @@ Full-stack anime recommender using RAG, Groq LLM, and live MyAnimeList data
 - **Groq** (free): https://console.groq.com
 - **HuggingFace** (free): https://huggingface.co/settings/tokens
 
-### 2. Backend
+### 2. Backend.
 ```bash
 cd backend
 python -m venv venv
